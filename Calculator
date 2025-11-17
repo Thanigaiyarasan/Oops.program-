@@ -1,1 +1,75 @@
+import java.util.Scanner;
+
+class Calculator {
+// add two integers
+int add(int a, int b) {
+return a + b;
+}
+
+// add two doubles
+double add(double a, double b) {
+    return a + b;
+}
+
+// add three integers
+int add(int a, int b, int c) {
+    return a + b + c;
+}
+}
+
+public class Main { // run this class
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+Calculator c = new Calculator();
+int choice;
+
+    do {
+        System.out.println("\n--- CALCULATOR MENU ---");
+        System.out.println("1. Add two integers");
+        System.out.println("2. Add two doubles");
+        System.out.println("3. Add three integers");
+        System.out.println("4. Exit");
+        System.out.print("Enter your choice: ");
+        choice = sc.nextInt();
+
+        switch (choice) {
+            case 1:
+                System.out.print("Enter first integer: ");
+                int i1 = sc.nextInt();
+                System.out.print("Enter second integer: ");
+                int i2 = sc.nextInt();
+                System.out.println("Result: " + c.add(i1, i2));
+                break;
+
+            case 2:
+                System.out.print("Enter first double: ");
+                double d1 = sc.nextDouble();
+                System.out.print("Enter second double: ");
+                double d2 = sc.nextDouble();
+                System.out.println("Result: " + c.add(d1, d2));
+                break;
+
+            case 3:
+                System.out.print("Enter first integer: ");
+                int j1 = sc.nextInt();
+                System.out.print("Enter second integer: ");
+                int j2 = sc.nextInt();
+                System.out.print("Enter third integer: ");
+                int j3 = sc.nextInt();
+                System.out.println("Result: " + c.add(j1, j2, j3));
+                break;
+
+            case 4:
+                System.out.println("Exiting...");
+                break;
+
+            default:
+                System.out.println("Invalid choice! Please try again.");
+        }
+    } while (choice != 4);
+
+    sc.close();
+}
+}
+
 
